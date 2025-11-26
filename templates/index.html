@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container pt-4">
+    <div class="row p-0 mt-4">
+        <div class="col-md-4 me-auto shadow">
+            <div class="alert alert-info">
+                <h2>Add TODO</h2>
+            </div>
+            <div class="p-2">
+                <form method="post" action="{% url 'add_todo' %}" novalidate>
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <button type="submit" class="btn btn-dark w-100">Add Todo</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="table-responsive shadow p-3">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>SL</th>
+                            <th>TITLE</th>
+                            <th>STATUS</th>
+                            <th>PRIORITY</th>
+                            <th>DATE</th>
+                            <th>DELETE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for todo in todos %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ todo.title }}</td>
+                            <td>{{ todo.status }}</td>
+                            <td>{{ todo.priority }}</td>
+                            <td>{{ todo.date }}</td>
+                            <td><a class="text-decoration-none text-dark" href="{% url 'delete_todo' todo.id %}">Delete ❌</a></td>
+                        </tr>
+                    {% empty %}
+                        <tr><td class="text-center" colspan="5">No tasks yet.</td></tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

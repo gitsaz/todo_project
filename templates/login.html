@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="contaiter">
+    <div class="row centered py-5 aling-items-center justify-content-center ">
+            <form class="col-md-6" method="POST">
+                {% csrf_token %}
+                <div class="form-group py-2">
+                    <h2 class="text-muted text-dark">Login to Your Account</h2>
+                </div>
+                <hr>
+                <div class="form-group my-1">
+                {% include 'message.html' %}
+                </div>
+                <div class="form-group py-1">
+                    <label for="username">Username or Email</label>
+                    <input class="form-control" type="text" name="username" id="username">
+                </div>
+                <div class="form-group py-1">
+                    <label for="password">Password</label>
+                    <input class="form-control" type="password" name="password" id="password">
+                </div>
+                <div class="form-group py-4 d-grid py-1">
+                    <button class="btn btn-dark" type="submit">Login</button>
+                </div>
+                <div class="my-2 md-2 d-flex d-grid aling-items-center justify-content-center">
+                    <p class="my-0">
+                        Do not have an account? please <a class="text-decoration-none" href="{% url 'register' %}">Register here</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
