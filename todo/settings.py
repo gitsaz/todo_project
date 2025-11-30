@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(-)q2(b-e=d_k(d39chqc@+*6!st%@lk5l3dr$^0qg=ses&eis'
+SECRET_KEY = 'g5(yr1(b+cp!aqj0^w@1*$vd@u)!0$uhw1d_ok^=b69-dgw&)g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -83,7 +83,7 @@ import dj_database_url
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL', 'postgres://postgres:812677@localhost:5432/todo_database')
+        default=os.environ.get('DATABASE_URL', 'postgres://todo_app_cz05_user:2DBO6Ou2aBs8sNTWsoariZC1OiTnabHO@localhost:5432/todo_app_cz05')
     )
 }
 
