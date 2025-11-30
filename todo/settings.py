@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-(-)q2(b-e=d_k(d39chqc@+*6!st%@lk5l3dr$^0qg=ses&eis
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '*',
+    'todo-project-8nxg.onrender.com',
     'localhost',
     '127.0.0.1'
 ]
